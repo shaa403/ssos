@@ -1,2 +1,6 @@
 
+# Dirs
 node_modules/
+
+# Files
+httpc.json
