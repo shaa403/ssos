@@ -18,4 +18,4 @@ where
 - message: Is the commit message and **MUST** be between 0 and 1024 characters in length. If the author does 
            not intend to add a commit message, He/She **MUST** set the message field to `0`.
 
-- contributer__username: Is the author's github username.
+- contributor__username: Is the author's github username.
