@@ -1,0 +1,20 @@
+{
+  "name": "ssos",
+  "version": "1.0.0",
+  "description": "\"Shaa's shitty operating system\" is a crappy vanilly HTML, CSS and NODE based OS.",
+  "main": "boot/boot.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "shar",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
