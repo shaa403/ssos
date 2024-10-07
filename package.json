@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node .",
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "ssbfree": "node scripts/ssbfree.js"
   },
   "keywords": [],
   "author": "shar",
