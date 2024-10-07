@@ -39,6 +39,7 @@ export default function ssb() {
   writeFileSync(lock.path, lock.content, "ascii");
   conf().set("isSetup", existsSync(completed_setup) ? false : true);
   conf().set("rootdir", process.cwd());
+  conf().set("port", port);
   start(port);
 }
 
