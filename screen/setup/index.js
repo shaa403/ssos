@@ -8,20 +8,20 @@ const restarting = document.querySelector("#restarting");
 
 function hideView(int) {
   if (int === "1") {
-  	welcome_message.classList.remove("show-prompt-container");
-  	welcome_message.classList.add("hide-prompt-container");
+    welcome_message.classList.remove("show-prompt-container");
+    welcome_message.classList.add("hide-prompt-container");
     storage_options.classList.remove("hide-prompt-container");
     storage_options.classList.add("show-prompt-container");
   }
   if (int === "2") {
-  	storage_options.classList.remove("show-prompt-container");
-  	storage_options.classList.add("hide-prompt-container");
+    storage_options.classList.remove("show-prompt-container");
+    storage_options.classList.add("hide-prompt-container");
     user_agreement.classList.remove("hide-prompt-container");
     user_agreement.classList.add("show-prompt-container");
   }
   if (int === "3") {
-  	user_agreement.classList.remove("show-prompt-container");
-  	user_agreement.classList.add("hide-prompt-container");
+    user_agreement.classList.remove("show-prompt-container");
+    user_agreement.classList.add("hide-prompt-container");
     create_user.classList.remove("hide-prompt-container");
     create_user.classList.add("show-prompt-container");
   }
