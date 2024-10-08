@@ -29,11 +29,11 @@ export default function ssb() {
       lock_content[0],
       new Date(Number(lock_content[1]))
     );
-  	console.log(
-  	 "You can still access ssOS via port %s, or run `npm run ssbfree` to destroy the current instance.", 
-  	 lock_content[2]
+    console.log(
+      "You can still access ssOS via port %s, or run `npm run ssbfree` to destroy the current instance.", 
+      lock_content[2]
     );
-  	process.exit(1);
+    process.exit(1);
   } 
   
   writeFileSync(lock.path, lock.content, "ascii");
