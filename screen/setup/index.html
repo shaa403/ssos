@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" width="device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./index.css"/>
+  </head>
+  <body id="body" style="background-color:#000;">
+    <img src="./wallpaper.jpg" id="wallpaper" alt="wallpaper" />
+    <div id="inner-display">
+       <div class="prompt-container show-prompt-container" id="welcome-message"> 
+           <h2 id="prompt-title">Shaa's Shitty Operating System</h2>
+           <div class="prompt-text" style="text-align:center;">
+              Please click the Start button and follow the instructions.
+           </div>
+           <button class="prompt-btn-1" onclick="hideView('1')">Start</button>
+       </div>
+       <!-- welcome message -->
+       <div class="prompt-container hide-prompt-container" id="storage-options"> 
+           <h2 id="prompt-title" style="text-align:left;align-self:flex-start;">
+             Where should your data be stored?
+           </h2>
+           <div class="prompt-text" style="text-align:left;">
+             We are currently storing all user data in a <strong>.ssos</strong> directory located at your OS home directory. 
+             Unfortunately, there's nothing you can do about it unless you're prepared to modify the entire 
+             codebase.
+           </div>
+           <button class="prompt-btn-1" style="align-self:flex-end;" onclick="hideView('2')">
+             Continue
+           </button>
+       </div>
+       <!-- storage options -->
+       <div class="prompt-container hide-prompt-container" id="user-agreement"> 
+           <h2 id="prompt-title" style="text-align:left;align-self:flex-start;">User Agreement</h2>      
+           <div class="prompt-text" style="text-align:left;align-self:flex-start;"> 
+             By using this crap, you agree to the following terms: 
+           </div> 
+           <div class="prompt-text" style="text-align:left;align-self:flex-start;">
+             - We may store user data in system directories and other locations 
+             necessary for operation.
+           </div>
+           <div class="prompt-text" style="text-align:left;align-self:flex-start;">
+             - We make reasonable efforts to secure your data, but cannot 
+             guarantee absolute protection.
+           </div>
+           <div class="prompt-text" style="text-align:left;align-self:flex-start;">
+             - You acknowledge that modifying the OS or its codebase may affect 
+             functionality or support.
+           </div>
+           <button class="prompt-btn-1" style="align-self:flex-end;"  onclick="hideView('3')">
+             I Agree
+           </button>
+       </div>    
+       <!-- user agreement -->
+       <div class="prompt-container hide-prompt-container" id="create-user"> 
+           <h2 id="prompt-title"  style="text-align:left;align-self:flex-start;"">Create User</h2>
+           <div class="prompt-text"  style="text-align:left;align-self:flex-start;">
+            Please note that you can create and manage multiple users.
+           </div>
+           <div style="display:flex;align-items:center;justify-content:center;gap:1em;width:100%;">
+           <input 
+             type="text" 
+             name="username" 
+             id="username" 
+             onKeyUp="watchinput()" 
+             placeholder="username" 
+             class="prompt-input"
+             autocomplete="off"  
+           />
+           <input
+             type="text" 
+             name="password" 
+             id="password" 
+             onKeyUp="watchinput()" 
+             placeholder="password" 
+             class="prompt-input"
+             autocomplete="off" 
+           />
+           </div>
+          <button 
+             class="prompt-btn-1" 
+             style="align-self:flex-end;opacity:0.4;cursor:none;" 
+             id="submit-btn"
+             onclick="submit()">Finish</button>
+       </div>    
+       <!-- create user -->
+       <div class="prompt-container hide-prompt-container" id="restarting"> 
+           <h2 id="prompt-title">Completed Setup</h2>  
+           <div class="prompt-text" style="text-align:center;">
+             Restarting the operating system in <span id="timeout">5</span> seconds.
+           </div>
+       </div>
+       <!-- restarting -->
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
