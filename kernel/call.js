@@ -2,6 +2,7 @@
 "use strict";
 
 import res_construct from "./res.js";
+import { lock_setup } from "../boot/interface.js";
 
 /**
  * This interface handles calls to the server (kernel). It does not follow the REST standard,
@@ -12,7 +13,13 @@ import res_construct from "./res.js";
  */
 export default function handle_call(request, response) {
   if (request.url === "/" && request.method === "POST" && request.body.call) {
-    console.log(request.body); 
+    response.setHeader("Content-Type", "application/json");
+    const call = request.body.call;
+    if (call === "_SETUP") lock_setup(request, response);  	
+    else {
+      response.statusCode = 403;   
+      response.end(res_construct(false, "UNKNOWN_KERNEL_CALL"));	
+    }; 
   } else {
     response.statusCode = 204;
     response.end();	
