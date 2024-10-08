@@ -1,6 +1,7 @@
 
 "use strict";
 
+import body_parser from "./body-parser.js";
 import handle_call from "./call.js";
 import handle_graphic_call from "./graphic.js";
 import res_construct from "./res.js"; 
@@ -14,7 +15,7 @@ export default function cb(request, response) {
     request.url = decodeURIComponent(request.url);
     const isNotGraphicCall = request.headers["x-call-type"] === "ng";
 
-    if (isNotGraphicCall) handle_call(request, response);      
+    if (isNotGraphicCall) body_parser(request, response, handle_call);      
     else {
        if (request.method === "GET") handle_graphic_call(request, response);
        else {
