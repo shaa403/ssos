@@ -65,26 +65,27 @@ function submit() {
      	})
      }).then(data => {
         callCode = data.status;
-     	return data.text();
      }).then(data => {
-        console.log(callCode, data);
+        if (callCode === 200) {
+           create_user.classList.remove("show-prompt-container");
+           create_user.classList.add("hide-prompt-container");
+           restarting.classList.remove("hide-prompt-container");
+           restarting.classList.add("show-prompt-container");
+
+	       const timeout_view = document.querySelector("#timeout");
+           let timeout = 4;  
+           setInterval(()=> {
+             if (timeout === 0) {
+               window.location.reload();
+             } else {
+               timeout_view.innerHTML = timeout;
+               --timeout;
+             }
+           }, 1000);
+        } else throw { message: null } 
+        //Throw a random error so none 200 requests can also be catched.
      }).catch(error => {
-       console.log(error);	
+        window.location.reload(); //Reload and see if this helps!	
      });
-  	   	// create_user.classList.remove("show-prompt-container");
-     	// create_user.classList.add("hide-prompt-container");
-        // restarting.classList.remove("hide-prompt-container");
-        // restarting.classList.add("show-prompt-container");
-// 
-        // const timeout_view = document.querySelector("#timeout");
-        // let timeout = 4;
-        // setInterval(()=> {
-          // if (timeout === 0) {
-          	// window.location.reload();
-          // } else {
-            // timeout_view.innerHTML = timeout;
-            // --timeout;
-          // }
-        // }, 1000);
   }
 }
