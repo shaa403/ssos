@@ -72,7 +72,7 @@ function submit() {
            restarting.classList.remove("hide-prompt-container");
            restarting.classList.add("show-prompt-container");
 
-	       const timeout_view = document.querySelector("#timeout");
+           const timeout_view = document.querySelector("#timeout");
            let timeout = 4;  
            setInterval(()=> {
              if (timeout === 0) {
