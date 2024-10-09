@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ssos - signin</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" width="device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./styles/index.css"/>
+  </head>
+  <body id="body" style="background-color:#000;">
+     <img src="./images/wallpaper.jpg" id="wallpaper" alt="wallpaper" />
+     <div id="inner-display" class="inner-display-blur inner-display-flex">
+         <div class="signin-prompt-container show-prompt-container" id="user_screen" style="gap:0.5em;">
+            <h2 class="signin-prompt-title" style="text-align:left;align-self:flex-start;">
+            Welcome to ssos
+            </h2>
+            <div class="signin-prompt-text" style="text-align:left;align-self:flex-start;">
+               Who do you want to sign in as?
+            </div> 
+            <div style="display:flex;flex-direction:column;gap:1em;width:100%;margin-top: 1em;" id="signin-prompt-usernames"> 
+            </div>
+         </div>
+         <div class="signin-prompt-container hide-prompt-container" id="password_screen" style="gap:1em;">
+            <h2 class="signin-prompt-title" style="text-align:left;align-self:flex-start;">
+              Welcome back <span id="signin-prompt-pass-usr"></span>
+            </h2>
+            <div class="signin-prompt-text" style="text-align:left;align-self:flex-start;">
+              Please enter the password associated with this account in other to proceed
+            </div> 
+            <input 
+               type="password" 
+               name="password" 
+               id="password" 
+               class="signin-prompt-input" 
+               placeholder="password" 
+               onKeyUp="watchinput()"
+               autocomplete="off" 
+            /> 
+            <button
+              id="signin-prompt-btn" style="align-self:flex-end;opacity:0.4;cursor:none;" 
+              onclick="signin_promp_submit()"
+            > 
+              Sign In 
+            </button> 
+        </div>
+        <!-- signin -->
+     </div>
+     <script src="./scripts/signin.js"></script>
+  </body>
+</html>
