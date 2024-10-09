@@ -52,7 +52,6 @@ let locked = false;
 function submit() {
   if (userInputValidated() && !locked) {
      locked = true;
-     let callCode = 0;
      fetch(window.location.origin, {
         method: "POST",
      	headers: {
@@ -64,9 +63,7 @@ function submit() {
      	   password: password.value	
      	})
      }).then(data => {
-        callCode = data.status;
-     }).then(data => {
-        if (callCode === 200) {
+        if (data.status === 200) {
            create_user.classList.remove("show-prompt-container");
            create_user.classList.add("hide-prompt-container");
            restarting.classList.remove("hide-prompt-container");
