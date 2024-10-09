@@ -29,14 +29,14 @@ export function signin(request, response) {
      let { user, password } = request.body;
      let isVerifiedUser = false;  
      if (user && password && existsSync(usr_info)) {
-  	    let users = readFileSync(usr_info, "ascii");	
+        let users = readFileSync(usr_info, "ascii");	
         users = users.split("\n");
         for (let n = 0; n < users.length; ++n) {
             const user_info = users[n].split("\t");
-  	   	    if (user_info[0] === user && user_info[1] === password) {
-  	   	       isVerifiedUser = true;
-  	   	       break;
-  	   	    }
+            if (user_info[0] === user && user_info[1] === password) {
+               isVerifiedUser = true;
+               break;
+            }
         }
      }	   
      if (isVerifiedUser) { 
