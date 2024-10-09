@@ -16,14 +16,14 @@ export default function handle_call(request, response) {
   if (request.url === "/" && request.method === "POST" && request.body.call) {
     response.setHeader("Content-Type", "application/json");
     const call = request.body.call;
-    if (call === "_SETUP") lock_setup(request, response);  	
-    if (call === "GETUSERS") get_users(request, response); 
+    if (call === "_SETUP") lock_setup(request, response);
+    else if (call === "GETUSERS") get_users(request, response);
     else {
-      response.statusCode = 403;   
-      response.end(res_construct(false, "UNKNOWN_KERNEL_CALL"));	
-    }; 
+      response.statusCode = 403;
+      response.end(res_construct(false, "UNKNOWN_KERNEL_CALL"));
+    };
   } else {
     response.statusCode = 204;
-    response.end();	
+    response.end();
   }
 }
