@@ -1,13 +1,19 @@
 
 class CONF {
   constructor() {
-  	this.conf = {}
+  	this.conf = { 
+  	   sessions: []
+    }
   }
   set(key, value) {
   	this.conf[key] = value;
   	return true;
   }
-  get (key) {
+  set_sessions(value) {
+  	this.conf.sessions.push(value);
+  	return true;
+  }
+  get(key) {
   	return this.conf[key] ?? null;
   }
   static conf() {
