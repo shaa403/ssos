@@ -3,7 +3,7 @@
 ## Commit Guide
 
 Throughout this document, the term __author__ refers to the individual who made a given commit.
-This is important for any developer looking to contribute to this wack project.
+This is important for any developer looking to contribute to this project.
 
 **PRs** where one or more commits fail to comply with the definitions specified in this documentation,
 especially those marked with the **MUST** keyword, will be rejected with a feedback.
@@ -11,11 +11,15 @@ especially those marked with the **MUST** keyword, will be rejected with a feedb
 All commits MUST follow the syntax : 
 
 ```
-<message> @@@ <contributor__username>
+<message> -> <tag>
 ```
 where 
 
 - message: Is the commit message and **MUST** be between 0 and 1024 characters in length. If the author does 
            not intend to add a commit message, He/She **MUST** set the message field to `0`.
 
-- contributor__username: Is the author's github username.
+- tag: Is a descriptor pointing out a hint of what the changes might be about. This descriptors can
+       only be the following: `bug`, `mod`, `new`, `nil`. use the  `bug` tag when the changes made relates
+       more to a bug fix, the `mod` tag when the changes made are random modifications to the codebase and
+       the project's existing features, the `new` tag when the changes made is a new feature and not and
+       already implemented featue. use the `nil` tag when the message is `0`.
