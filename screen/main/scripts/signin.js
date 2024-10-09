@@ -62,7 +62,7 @@ function signin_promp_submit() {
   if (userPasswordValidated() && !locked) {
      locked = true;
   	 document.querySelector("#signin-prompt-btn").style.cursor = "none";
-  	 document.querySelector("#signin-prompt-btn").style.opacity = 0.4;
+  	 document.querySelector("#signin-prompt-btn").style.opacity = 0.4; 
      console.log(user, password.value);
   }
 }
