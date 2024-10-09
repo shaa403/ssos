@@ -34,7 +34,8 @@ function userInputValidated() {
   if (
     username.value && password.value &&
     username.value.length <= 20 && password.value.length <= 20 &&
-    username.value.length >= 2 && password.value.length >= 6 
+    username.value.length >= 2 && password.value.length >= 6 &&
+    /^[A-Za-z0-9]+$/.test(username.value)
   ) return true;
   else return false;
 }
