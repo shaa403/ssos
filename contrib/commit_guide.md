@@ -21,5 +21,5 @@ where
 - tag: Is a descriptor pointing out a hint of what the changes might be about. These descriptors can
        only be the following: `bug`, `mod`, `new`, `nil`. use the  `bug` tag when the changes made relates
        more to a bug fix, the `mod` tag when the changes made are random modifications to the codebase and
-       the project's existing features, the `new` tag when the changes made is a new feature and not and
-       already implemented featue. use the `nil` tag when the message is `0`.
+       the project's existing features, the `new` tag when the changes made intends to add non-existing 
+       features to the project, and use the `nil` tag when the message is `0`.
