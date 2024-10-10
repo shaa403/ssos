@@ -3,7 +3,7 @@
 
 import res_construct from "./res.js";
 import { lock_setup } from "../boot/interface.js";
-import { get_users, signin } from "../api/usr.js";
+import { get_users, signin, verify_user } from "../api/usr.js";
 
 /**
  * This interface handles calls to the server (kernel). It does not follow the REST standard,
@@ -19,9 +19,10 @@ export default function handle_call(request, response) {
     if (call === "_SETUP") lock_setup(request, response);
     else if (call === "GETUSERS") get_users(request, response);
     else if (call === "SIGNIN") signin(request, response);
+    else if (call === "VERIFYUSER") verify_user(request, response, false);
     else {
       response.statusCode = 403;
-      response.end(res_construct(false, "UNKNOWN_KERNEL_CALL"));
+      response.end(res_construct(false, "UNKNOWN_SYS_CALL"));
     };
   } else {
     response.statusCode = 204;

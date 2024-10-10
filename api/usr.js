@@ -56,3 +56,17 @@ export function signin(request, response) {
      // -1 signifies that the request is unauthorized because there is already an active session. 
   }
 }
+
+export function verify_user(request, response, next) {
+  const { id } = request.body;
+  const user = conf().get("sessions").find(u => u.id === id);
+  if (user && next) { 
+    next(request, response, user);
+  } else if (user && !next) { 
+    response.statusCode = 200;
+    response.end(res_construct(true, null, null)); 
+  } else {
+    response.statusCode = 401;
+    response.end(res_construct(false, "INVALID_CREDENTIALS"));	
+  }	
+}
