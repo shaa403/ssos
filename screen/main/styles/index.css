@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'inter';
+  font-family: "inter";
   font-style: normal;
   font-weight: 800;
-  src: local('inter'), local('inter'), url(../fonts/Inter_24pt-ExtraBold.ttf)format('truetype');
+  src: local("inter"), local("inter"), url(../fonts/Inter_24pt-ExtraBold.ttf)format("truetype");
 }
 @font-face {
-  font-family: 'poppins';
+  font-family: "poppins";
   font-style: normal;
   font-weight: 500;
-  src: local('poppins'), local('poppins'), url(../fonts/Poppins-Regular.ttf)format('truetype');
+  src: local("poppins"), local("poppins"), url(../fonts/Poppins-Regular.ttf)format("truetype");
 }
 @font-face {
-  font-family: 'poppins_bold';
+  font-family: "poppins_bold";
   font-style: normal;
   font-weight: 500;
-  src: local('poppins_bold'), local('poppins_bold'), url(../fonts/Poppins-SemiBold.ttf)format('truetype');
+  src: local("poppins_bold"), local("poppins_bold"), url(../fonts/Poppins-SemiBold.ttf)format("truetype");
 }
 
 * {
