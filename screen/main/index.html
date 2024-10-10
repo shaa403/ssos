@@ -35,12 +35,15 @@
                onKeyUp="watchinput()"
                autocomplete="off" 
             /> 
-            <button
-              id="signin-prompt-btn" style="align-self:flex-end;opacity:0.4;cursor:none;" 
-              onclick="signin_promp_submit()"
-            > 
-              Sign In 
-            </button> 
+             <div class="signin-prompt-text"  
+                  style="text-align:left;align-self:flex-start;color:tomato;display:none;"
+                  id="signin-prompt-alert">Incorrect password</div>            
+            <div id="signin-prompt-btn-body" style="align-self:flex-end;">
+               <button 
+                 id="signin-prompt-btn" style="opacity:0.4;cursor:none;" 
+                 onclick="signin_promp_submit()">Sign In </button> 
+               <!-- <span>Incorrect password</span> -->
+            </div>
         </div>
         <!-- signin -->
      </div>
