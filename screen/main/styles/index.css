@@ -41,7 +41,7 @@
   height: 100%;
 }
 
-#inner-display {  
+.inner-display {  
   z-index: 1;
   width: 100%;
   height: 100%;

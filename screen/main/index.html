@@ -8,7 +8,7 @@
   </head>
   <body id="body" style="background-color:#000;">
      <img src="./images/wallpaper.jpg" id="wallpaper" alt="wallpaper" />
-     <div id="inner-display" class="inner-display-blur inner-display-flex">
+     <div id="signin-screen" class="inner-display inner-display-blur inner-display-flex" style="display: none;">
          <div class="signin-prompt-container show-prompt-container" id="user_screen" style="gap:0.5em;">
             <h2 class="signin-prompt-title" style="text-align:left;align-self:flex-start;">
             Welcome to ssos
@@ -45,8 +45,13 @@
                <!-- <span>Incorrect password</span> -->
             </div>
         </div>
-        <!-- signin -->
      </div>
+     <!-- signin  -->
+
+     <div id="main-screen" class="inner-display" style="display: none;">
+        <h1>Hello world</h1>
+     </div>
+     <!-- main -->
      <script src="./scripts/signin.js"></script>
   </body>
 </html>

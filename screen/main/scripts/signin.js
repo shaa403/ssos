@@ -1,10 +1,22 @@
 
-
 const sessionID = sessionStorage.getItem("session");
 
-console.log(sessionID);
+fetch(window.location.origin, {
+   method: "POST",
+   headers: {
+      "x-call-type": "ng"
+   },
+   body: JSON.stringify({ call: "VERIFYUSER", id: sessionID })	
+}).then(data => {
+   if (data.status === 200) {
+   	 document.querySelector("#main-screen").style.display = "block";
+   } else if (data.status === 401) {
+   	 document.querySelector("#signin-screen").style.display = "flex";
+   } else throw { message: null } 
+    //Throw such unknown response, so the catch block can execute it	
+}).catch(_ => setTimeout(()=> window.location.reload(), 7000) ); 
 
-function sign_user() {
+{
   let user;
   let password = document.querySelector("#password");
   let _get_users_status_ = 0;  
@@ -32,7 +44,7 @@ function sign_user() {
       users.map(user => {
    	     if (user) username_container.innerHTML += template(user);
       });
-   }).catch(error => {
+   }).catch(_ => {
       // Chances of this block ever getting executed is extremely low.
       setTimeout(()=> window.location.reload(), 7000);  
    }); 
