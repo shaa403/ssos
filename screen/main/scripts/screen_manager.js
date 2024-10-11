@@ -6,7 +6,8 @@ getBatteryStats();
 function getTime() {
   const date = new Date();
   const hh = date.getHours();
-  return `${hh < 10 ? '0'+ hh : hh}:${date.getMinutes()}`;		
+  const mm = date.getMinutes()
+  return `${hh < 10 ? '0'+ hh : hh}:${mm < 10 ? '0'+ mm : mm}`;		
 }
 function getBatteryStats() {
   fetch(window.location.origin, {
@@ -19,7 +20,8 @@ function getBatteryStats() {
      return data.json()
   }).then(data => {
      if (data.ack === true) {
-        if(!data.data.ischarging) document.querySelector("#menu-bar-battery-charing").style.display = "none";
+        if(data.data.ischarging) document.querySelector("#menu-bar-battery-charing").style.display = "block";
+        else document.querySelector("#menu-bar-battery-charing").style.display = "none";
         document.querySelector("#menu-bar-battery-percentage").innerHTML = data.data.lvl * 100 +'%';
      }
   })	
