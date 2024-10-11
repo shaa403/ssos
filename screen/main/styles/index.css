@@ -182,6 +182,15 @@
   align-items: center;
   padding: 1em 2.5em;
 } 
+.show-menu-bar { 
+  animation-name: menubar-slide-down; 
+  animation-duration: 0.8s; 
+  animation-fill-mode: forwards; 
+} 
+@keyframes menubar-slide-down { 
+  from { top: -8%; } 
+  to { top: 0%; } 
+} 
 #menu-bar-application-stats {
   padding: 0.1em 0.8em;
   background-color: rgba(240,240,255,0.9); 
