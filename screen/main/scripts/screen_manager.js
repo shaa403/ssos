@@ -2,6 +2,7 @@
 
 document.querySelector("#menu-bar-time").innerHTML = getTime();
 getBatteryStats();
+getNetStats();
 
 function getTime() {
   const date = new Date();
@@ -26,8 +27,30 @@ function getBatteryStats() {
      }
   })	
 }
+function getNetStats() {
+  fetch(window.location.origin, {
+  	 method: "POST",
+  	 headers: {
+  	 	"x-call-type": "ng"
+  	 }, 
+  	 body: JSON.stringify({ call: "GET_NET_STATUS" })
+  }).then(data => {
+     return data.json()
+  }).then(data => {
+     if (data.ack === true) {
+        if(data.data) {
+           document.querySelector("#menu-bar-net-connected").style.display = "block";
+           document.querySelector("#menu-bar-net-disconnected").style.display = "none";
+        } else {
+           document.querySelector("#menu-bar-net-connected").style.display = "none";
+           document.querySelector("#menu-bar-net-disconnected").style.display = "block";        	
+        }
+     }
+  })	
+}
  
 setInterval(()=> {
   document.querySelector("#menu-bar-time").innerHTML = getTime();
   getBatteryStats();
+  getNetStats();
 },1000 * 7);
