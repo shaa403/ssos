@@ -191,7 +191,7 @@
   gap: 1em;
   flex-direction: row;
 }
-#menu-bar-application-stats-txt {
+.menu-bar-application-stats-txt {
   font-family: "poppins_bold", sans-serif;
   font-size:0.83em;
   margin-top: 0.3em;
