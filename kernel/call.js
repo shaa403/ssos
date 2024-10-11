@@ -3,6 +3,7 @@
 
 import res_construct from "./res.js";
 import { lock_setup } from "../boot/interface.js";
+import { get_battery_status } from "../api/sys.js";
 import { get_users, signin, verify_user } from "../api/usr.js";
 
 /**
@@ -20,6 +21,7 @@ export default function handle_call(request, response) {
     else if (call === "GETUSERS") get_users(request, response);
     else if (call === "SIGNIN") signin(request, response);
     else if (call === "VERIFYUSER") verify_user(request, response, false);
+    else if (call === "GET_BATTERY_STATUS") get_battery_status(request, response);
     else {
       response.statusCode = 403;
       response.end(res_construct(false, "UNKNOWN_SYS_CALL"));
