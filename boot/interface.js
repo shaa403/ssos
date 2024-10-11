@@ -6,7 +6,7 @@ import conf from "../etc/conf.js";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { randalphabets } from "../etc/rand.js";
-import res_construct from "../kernel/res.js";
+import res_construct from "../api/res.js";
 
 
 export function lock_setup(request, response) {

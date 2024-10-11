@@ -1,11 +1,10 @@
 
 "use strict";
 
-import { networkInterfaces } from "node:os";
-
 import batteryLevel from "battery-level";
 import isCharging from "is-charging";
-import res_construct from "../kernel/res.js";
+import { networkInterfaces } from "node:os";
+import res_construct from "../api/res.js";
 
 export async function get_battery_status(response) {
   let lvl;

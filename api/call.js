@@ -3,8 +3,8 @@
 
 import res_construct from "./res.js";
 import { lock_setup } from "../boot/interface.js";
-import { get_battery_status, get_net_stats } from "../api/sys.js";
-import { get_users, signin, verify_user } from "../api/usr.js";
+import { get_battery_status, get_net_stats } from "../kernel/sys.js";
+import { get_users, signin, verify_user } from "../kernel/usr.js";
 
 /**
  * This interface handles calls to the server (kernel). It does not follow the REST standard,

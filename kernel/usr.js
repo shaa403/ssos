@@ -4,7 +4,7 @@
 import conf from "../etc/conf.js";
 import { existsSync, readFileSync } from "node:fs";
 import { randalphabets } from "../etc/rand.js";
-import res_construct from "../kernel/res.js";
+import res_construct from "../api/res.js";
 import { usr_info } from "../etc/addresses.js";
 
 
