@@ -8,7 +8,7 @@ import res_construct from "../kernel/res.js";
 import { usr_info } from "../etc/addresses.js";
 
 
-export function get_users(request, response) {
+export function get_users(response) {
   let users = [];
   if (existsSync(usr_info)) {
     users = readFileSync(usr_info, "ascii");

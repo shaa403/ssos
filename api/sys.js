@@ -7,7 +7,7 @@ import batteryLevel from "battery-level";
 import isCharging from "is-charging";
 import res_construct from "../kernel/res.js";
 
-export async function get_battery_status(request, response) {
+export async function get_battery_status(response) {
   let lvl;
   await batteryLevel((_,num)=> lvl = num);
   const ischarging= await isCharging();

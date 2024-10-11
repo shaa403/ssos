@@ -18,10 +18,10 @@ export default function handle_call(request, response) {
     response.setHeader("Content-Type", "application/json");
     const call = request.body.call;
     if (call === "_SETUP") lock_setup(request, response);
-    else if (call === "GETUSERS") get_users(request, response);
+    else if (call === "GETUSERS") get_users(response);
     else if (call === "SIGNIN") signin(request, response);
     else if (call === "VERIFYUSER") verify_user(request, response, false);
-    else if (call === "GET_BATTERY_STATUS") get_battery_status(request, response);
+    else if (call === "GET_BATTERY_STATUS") get_battery_status(response);
     else if (call === "GET_NET_STATUS") get_net_stats(response);
     else {
       response.statusCode = 403;
