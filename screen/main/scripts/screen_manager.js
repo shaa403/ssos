@@ -30,4 +30,4 @@ function getBatteryStats() {
 setInterval(()=> {
   document.querySelector("#menu-bar-time").innerHTML = getTime();
   getBatteryStats();
-},1000 * 10);
+},1000 * 7);
