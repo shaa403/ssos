@@ -31,7 +31,7 @@ implemented, but are not fully functional.
 ## Run SSOS
 You will need the following to run SSOS: `npm`, `Node 16+`, and `a web browser`.
 SSOS is currently in development and does not yet have a production-ready distribution. To run it
-'like that,' follow the steps below:
+'like that', follow the steps below:
 
 Clone the repo: 
 ```bash
