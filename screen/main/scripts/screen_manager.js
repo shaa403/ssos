@@ -30,6 +30,4 @@ function getBatteryStats() {
 setInterval(()=> {
   document.querySelector("#menu-bar-time").innerHTML = getTime();
   getBatteryStats();
-},1000 * 30);
-  /* Not up to 60s "on purpose" to sync since the amount of seconds left till "new time" depends on the 
-  time at which this script started execution. this is also a good interval for fetching battery stats */
+},1000 * 10);
