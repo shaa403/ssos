@@ -53,4 +53,4 @@ setInterval(()=> {
   document.querySelector("#menu-bar-time").innerHTML = getTime();
   getBatteryStats();
   getNetStats();
-},1000 * 7);
+},1000 * 5);
